@@ -1,0 +1,25 @@
+﻿<a class="ui green button" href="/manage/questionnaire/add">添加问卷</a>
+<a class="ui blue button" href="/manage/questions">题库</a>
+<a class="ui orange right floated button" href="/manage/logout">注销</a>
+<table class="ui celled table" ng-show="questionnaires!=null&&questionnaires.length>0">
+    <thead>
+        <tr>
+            <th>题目</th>
+            <th class="collapsing">题目数</th>
+            <th class="collapsing">状态</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="questionnaire in questionnaires">
+            <td>
+                <a href="/manage/questionnaire/{{questionnaire._id}}">{{questionnaire.title}}</a>
+            </td>
+            <td class="collapsing center aligned">{{questionnaire.questions.length}}</td>
+            <td class="collapsing" ng-show="questionnaire.isPublished">已发布</td>
+            <td class="collapsing" ng-show="!questionnaire.isPublished">未发布</td>
+        </tr>
+    </tbody>
+</table>
+<div class="ui message" ng-show="questionnaires==null||questionnaires.length==0">
+    未找到问卷
+</div>

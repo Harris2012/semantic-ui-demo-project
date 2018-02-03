@@ -1,0 +1,33 @@
+﻿<h3 class="ui dividing header">{{questionnaire.title}} (已发布)</h3>
+<table class="ui celled table">
+    <thead>
+        <tr>
+            <th colspan="3">题目({{questionsCount}})</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="question in questions">
+            <td class="collapsing">
+                <div class="ui checkbox">
+                    <input type="checkbox" disabled v-model="question.selected"
+                           v-on:change="countQuestions"><label></label>
+                </div>
+            </td>
+            <td>{{question.content}}</td>
+            <td class="collapsing" v-if="question.type==1">单选</td>
+            <td class="collapsing" v-if="question.type==2">多选</td>
+            <td class="collapsing" v-if="question.type==3">问答</td>
+        </tr>
+    </tbody>
+</table>
+<p class="datetime">
+    <h4 class="ui header">
+        截止时间: {{questionnaire.deadline}}
+    </h4>
+    <h4 class="ui header">
+        <a href="/questionnaire/{{questionnaire._id}}">问卷页面</a>
+    </h4>
+    <h4 class="ui header">
+        <a href="/result/{{questionnaire._id}}">统计数据</a>
+    </h4>
+</p>

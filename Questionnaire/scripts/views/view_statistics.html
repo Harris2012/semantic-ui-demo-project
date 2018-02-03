@@ -1,0 +1,29 @@
+﻿<h2 class="ui dividing blue header">{{questionnaire.title}}</h2>
+<div v-for="(index,question) in questionnaire.questions">
+    <h3 class="ui header">{{(index+1)+'. '+question.content}}</h3>
+
+    <div class="ui grid" v-if="question.type==1||question.type==2">
+        <div class="six wide right aligned column">
+            <div class="row">
+                <div style="{height: question.options.length * 50 +'px',marginTop: '21px'}">
+                    <div v-for="(index,option) in question.options">
+                        <div style="{height: '50px'}">
+                            <div style="{position: 'relative',top:'50%',transform:'translateY(-50%)'}">
+                                {{option.content}}({{question.optionsCount==0?0:(Math.round(option.count / question.optionsCount * 100) + '%')}})
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="eight wide column">
+            <div class="row" id="{{question._id}}"></div>
+        </div>
+    </div>
+    <div class="ui list" v-if="question.type==3">
+        <div class="item" v-for="reply in question.replies">
+            {{reply}}
+        </div>
+    </div>
+    <div class="ui divider"></div>
+</div>

@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "scripts/questionnaire.js",
+    "inputFiles": [
+      "scripts/controllers/WelcomeController.js"
+    ]
+  },
+  {
+    "outputFileName": "scripts/angular-ui-semantic/ui-semantic.js",
+    "inputFiles": [
+      "scripts/angular-ui-semantic/components/sm-menu.js"
+    ]
+  }
+]

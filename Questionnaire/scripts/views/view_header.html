@@ -1,0 +1,33 @@
+﻿<div class="ui container">
+
+    <div class="ui secondary menu">
+        <div class="header item" ui-sref="questionnaire.welcome">Questionnaire</div>
+        <div class="ui dropdown item" sm-menu>
+            Questionnaires<i class="dropdown icon"></i>
+            <div class="menu">
+                <a class="item" ui-sref="questionnaire.addQuestionnaire">Create</a>
+                <a class="item" ui-sref="questionnaire.editQuestionnaireIsPublished">Edit Published</a>
+                <a class="item" ui-sref="questionnaire.editQuestionnaireNotPublished">Edit Not Published</a>
+            </div>
+        </div>
+        <div class="ui dropdown item" sm-menu>
+            Questions<i class="dropdown icon"></i>
+            <div class="menu">
+                <a class="item" ui-sref="questionnaire.questions">List</a>
+                <div class="divider"></div>
+                <a class="item" ui-sref="questionnaire.addQuestion">Create</a>
+                <a class="item" ui-sref="questionnaire.editQuestion">Edit</a>
+            </div>
+        </div>
+        <div class="right menu">
+            <div class="item">
+                <div class="ui action left icon input">
+                    <i class="search icon"></i>
+                    <input type="text" placeholder="Search">
+                    <button class="ui button">Submit</button>
+                </div>
+            </div>
+            <a class="item" ui-sref="questionnaire.login">Login</a>
+        </div>
+    </div>
+</div>

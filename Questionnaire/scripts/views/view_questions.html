@@ -1,0 +1,25 @@
+﻿<a class="ui green button" href="/manage/question/add">添加题目</a>
+<table class="ui celled table" ng-show="questions!=null&&questions.length>0">
+    <thead>
+        <tr>
+            <th>题目</th>
+            <th class="collapsing">类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="question in questions">
+            <td>
+                <a href="/manage/question/{{question._id}}">{{question.content}}</a>
+            </td>
+            <td class="collapsing" ng-show="question.type==1">单选</td>
+            <td class="collapsing" ng-show="question.type==2">多选</td>
+            <td class="collapsing" ng-show="question.type==3">问答</td>
+        </tr>
+    </tbody>
+</table>
+<div class="ui message" ng-show="questions==null||questions.length==0">
+    题库中没有题目
+</div>
+
+<div class="ui top attached block header">Title</div>
+<div class="ui bottom attached segment">Content</div>
